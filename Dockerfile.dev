@@ -1,0 +1,24 @@
+FROM node:alpine
+
+# RUN mkdir -p /usr/src/app
+# RUN chmod -R 777 /usr/src/app
+
+WORKDIR /usr/src/app
+
+COPY package.json ./
+
+RUN npm install
+
+COPY ./ ./
+
+CMD ["npm", "run", "serve"]
+
+# -f 이미지를 빌드할때 쓰일 도커 파일을 임의로 지정해준다. (이름을참조해줌)
+# docker build -f Dockerfile.dev -t ghrp8277/vue ./
+
+# -i: 상호 입출력
+# -t: tty를 활성화하여 bash쉘을 사용
+# docker run -it -d -p 8000:8000 ghrp8277/vue
+
+# volumn 참조
+# docker run -it -p 8000:8080 -v /usr/src/app/node_modules -v pwd:/usr/src/app ghrp8277:vue

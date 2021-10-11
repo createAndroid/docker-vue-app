@@ -1,0 +1,12 @@
+로컬 git 저장소 만들기
+git init
+
+현재까지의 소스를 로컬 git 저장소에 저장
+git add .
+git commit -m 'first commot'
+
+로컬 git 저장소와 github remote를 연결시키기
+git remote add origin https://github.com/createAndroid/docker-vue-app
+
+로컬 git 저장소에 있는 소스를 github에 업로드 시키기
+git push origin master
