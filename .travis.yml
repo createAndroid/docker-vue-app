@@ -1,0 +1,22 @@
+# 관리자 권한 갖기
+sudo: required
+
+# 언어(플랫폼)을 선택
+language: generic
+
+# 도커 환경 구성
+services:
+  - docker
+
+# 스크립트를 실행할 수 있는
+before_install:
+  - echo "start creating an image with dockerfile"
+  - docker build -t ghrp8277/vue -f Dockerfile.dev .
+
+# 실행할 스크립트
+script:
+  - docker run -e CI=true ghrp8277/vue
+
+# 테스트 성공 후 할일
+after_success:
+  - echo "Test success"
