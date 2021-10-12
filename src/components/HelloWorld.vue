@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }} 안녕하세요</h1>
+    <h1>{{ msg }} 안녕하세요 테스트입니다.</h1>
     <p>
       For a guide and recipes on how to configure / customize this project,<br />
       check out the
